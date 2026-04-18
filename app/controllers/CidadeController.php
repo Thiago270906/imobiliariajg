@@ -18,7 +18,7 @@ class CidadeController
         $cidades = $this->repository->listar();     // listar() -> Método da classo no CidadeRepository, armazenando no $cidades
 
         // Enviando dados para a View
-        require '../views/cidades/index.php';       // require -> Carrega o arquivo da View que tem acesso à variável $cidades
+        require __DIR__ . '/../views/cidades/index.php';       // require -> Carrega o arquivo da View que tem acesso à variável $cidades
     }
 
     public function create()

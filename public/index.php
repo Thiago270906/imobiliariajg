@@ -4,11 +4,19 @@ require_once __DIR__ . '/../app/controllers/CidadeController.php';
 $controller = new CidadeController();
 
 // Se for POST -> SALVAR
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $controller->store(); // Para testar inserção / salvar
+if ($_SERVER['REQUEST_METHOD'] ==='POST') {
+    $controller->update();
+} elseif (isset($_GET['edit'])) {
+    $controller->edit($_GET['id']);
 } else {
-    $controller->create();
+    $controller->index();
 }
+
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//     $controller->store(); // Para testar inserção / salvar
+// } else {
+//     $controller->create();
+// }
 
 
 

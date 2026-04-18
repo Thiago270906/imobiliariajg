@@ -6,12 +6,14 @@
 
 <form method="POST" action="">
 
+    <input type="hidden" name="id" value="<?= $cidade->getId(); ?>">
+
     <label>Nome: </label>
-    <input type="text" name="nome" required>
+    <input type="text" name="nome" value="<?= $cidade->getNome();?>" required>
     <br><br>
 
     <label>Estado: </label>
-    <input type="text" name="estado" maxlength="2" required>
+    <input type="text" name="estado" maxlength="2" value="<?= $cidade->getEstado();?>"  required>
     <br><br>
 
     <button type="submit">Salvar</button>
