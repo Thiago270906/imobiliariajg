@@ -58,6 +58,22 @@ class CidadeController
         }
         require __DIR__ . '/../views/cidades/edi.php';
     }
+    
+    public function update()
+    {
+        $id = $_POST['id'];
+        $nome = $_POST['nome'];
+        $estado = $_POST['estado'];
+        try {
+            $cidade = new Cidade($nome, $estado);
+            $cidade->setId($id);
+            $this->repository->atualizar($cidade);
+            header("Location: index.php?sucesso=2");
+            exit;
+        } catch (Exception $e) {
+            echo "Erro: " . $e->getMessage();
+        }
+    }
 }
 
 ?>
